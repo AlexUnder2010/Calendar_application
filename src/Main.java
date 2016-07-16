@@ -1,4 +1,5 @@
-import java.time.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.ChronoField;
 import java.util.Date;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Main {
         System.out.print("Enter month: ");
 
         Date date = new Date();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //converting from jdk 7 to 8
 
         int day = localDate.getDayOfMonth();
         int year = localDate.getYear();
@@ -31,10 +32,10 @@ public class Main {
         System.out.println((char) 27 + "[31mSat Sun" + (char) 27 + "[0m"); // red color
 
         int i, j, f = 1, r = 7, c = 7; // f = first day, r = rows, c = columns
-        int[][] monthCalendar = new int[r][c];
+        int[][] monthCalendar = new int[r][c]; // new array
         for (i = 0; i < r && f <= (curr.lengthOfMonth()); ++i)
             for (j = 0; j < c && f <= (curr.lengthOfMonth()); ++j)
-                if ((i == 0 && j >= curr.get(ChronoField.DAY_OF_WEEK) - 2) || i != 0)
+                if ((i == 0 && j >= curr.get(ChronoField.DAY_OF_WEEK) - 3) || i != 0) // loop
                     monthCalendar[i][j] = f++;
 
         for (i = 0; i < r; ++i, System.out.println())
