@@ -31,11 +31,26 @@ public class Main {
         System.out.print("\nMon Tue Wed Thu Fri "); // default color
         System.out.println((char) 27 + "[31mSat Sun" + (char) 27 + "[0m"); // red color
 
+        /*int x = 0;
+        if (curr.getDayOfWeek() == DayOfWeek.MONDAY)
+            x = 0;
+        else if (curr.getDayOfWeek() == DayOfWeek.TUESDAY)
+            x = 2;
+        else if (curr.getDayOfWeek() == DayOfWeek.WEDNESDAY)
+            x = 1;
+        else if (curr.getDayOfWeek() == DayOfWeek.THURSDAY)
+            x = 0;
+        else if (curr.getDayOfWeek() == DayOfWeek.FRIDAY)
+            x = -1;
+        else if (curr.getDayOfWeek() == DayOfWeek.SATURDAY)
+            x = -2;
+        else if (curr.getDayOfWeek() == DayOfWeek.SUNDAY)
+            x = -3;*/
         int i, j, f = 1, r = 6, c = 7; // f = first day, r = rows, c = columns
         int[][] monthCalendar = new int[r][c]; // new array
         for (i = 0; i < r && f <= (curr.lengthOfMonth()); ++i)
             for (j = 0; j < c && f <= (curr.lengthOfMonth()); ++j)
-                if ((i == 0 && j >= localDate.get(ChronoField.ALIGNED_WEEK_OF_MONTH)) || i != 0) // loop
+                if ((i == 0 && j >= curr.get(ChronoField.ALIGNED_DAY_OF_WEEK_IN_YEAR)) || i != 0) // loop
                     monthCalendar[i][j] = f++;
 
         for (i = 0; i < r; ++i, System.out.println())
