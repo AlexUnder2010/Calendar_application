@@ -35,13 +35,13 @@ public class Main {
         int[][] monthCalendar = new int[r][c]; // new array
         for (i = 0; i < r && f <= (curr.lengthOfMonth()); ++i)
             for (j = 0; j < c && f <= (curr.lengthOfMonth()); ++j)
-                if ((i == 0 && j >= curr.get(ChronoField.ALIGNED_DAY_OF_WEEK_IN_YEAR)) || i != 0) //loop
+                if ((i == 0 && j >= curr.get(ChronoField.ALIGNED_DAY_OF_WEEK_IN_YEAR) - 1) || i != 0) //loop
                     monthCalendar[i][j] = f++;
 
         for (i = 0; i < r; ++i, System.out.println())
             for (j = 0; j < c; ++j)
                 if (monthCalendar[i][j] != 0)
-                    if (localDate.getMonth() == curr.getMonth() && monthCalendar[i][j] == curr.get(ChronoField.DAY_OF_MONTH)) { //check if the selected month equals current month
+                    if (localDate.getMonth() == curr.getMonth() && monthCalendar[i][j] == localDate.get(ChronoField.DAY_OF_MONTH)) { //check if the selected month equals current month
                         System.out.printf((char) 27 + "[1;34m");
                         System.out.printf("%3d ",monthCalendar[i][j]);
                         System.out.printf((char) 27 + "[0m");
