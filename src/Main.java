@@ -35,7 +35,7 @@ public class Main {
         int[][] monthCalendar = new int[r][c]; // new array
         for (i = 0; i < r && f <= (curr.lengthOfMonth()); ++i)
             for (j = 0; j < c && f <= (curr.lengthOfMonth()); ++j)
-                if ((i == 0 && j >= curr.get(ChronoField.ALIGNED_DAY_OF_WEEK_IN_YEAR) - 2) || i != 0) //loop
+                if ((i == 0 && j >= curr.get(ChronoField.ALIGNED_DAY_OF_WEEK_IN_YEAR) - 2) || i != 0) // loop
                     monthCalendar[i][j] = f++;
 
         for (i = 0; i < r; ++i, System.out.println())
