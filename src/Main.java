@@ -34,19 +34,19 @@ public class Main {
 
         int x = 0;
         if (localDate.getDayOfWeek() == DayOfWeek.MONDAY)
-            x = 3;
-        else if (localDate.getDayOfWeek() == DayOfWeek.TUESDAY)
             x = 2;
-        else if (localDate.getDayOfWeek() == DayOfWeek.WEDNESDAY)
+        else if (localDate.getDayOfWeek() == DayOfWeek.TUESDAY)
             x = 1;
-        else if (localDate.getDayOfWeek() == DayOfWeek.THURSDAY)
+        else if (localDate.getDayOfWeek() == DayOfWeek.WEDNESDAY)
             x = 0;
-        else if (localDate.getDayOfWeek() == DayOfWeek.FRIDAY)
+        else if (localDate.getDayOfWeek() == DayOfWeek.THURSDAY)
             x = -1;
-        else if (localDate.getDayOfWeek() == DayOfWeek.SATURDAY)
+        else if (localDate.getDayOfWeek() == DayOfWeek.FRIDAY)
             x = -2;
-        else if (localDate.getDayOfWeek() == DayOfWeek.SUNDAY)
+        else if (localDate.getDayOfWeek() == DayOfWeek.SATURDAY)
             x = -3;
+        else if (localDate.getDayOfWeek() == DayOfWeek.SUNDAY)
+            x = -4;
 
         int i, j, f = 1, r = 6, c = 7; // f = first day, r = rows, c = columns
         int[][] monthCalendar = new int[r][c]; // new array
